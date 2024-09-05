@@ -2,12 +2,12 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: game-2048
+  name: odex
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: game-2048
+  namespace: odex
   name: deployment-2048
 spec:
   selector:
@@ -29,7 +29,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: game-2048
+  namespace: odex
   name: service-2048
 spec:
   ports:
@@ -43,7 +43,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: game-2048
+  namespace: odex
   name: ingress-2048
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
